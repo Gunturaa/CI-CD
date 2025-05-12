@@ -1,4 +1,10 @@
-from main import greet
+from main import tambah, greet
+
+def test_tambah():
+    assert tambah(2, 3) == 5
+    assert tambah(-1, 1) == 0
+    assert tambah(0, 0) == 0
 
 def test_greet():
-    assert greet() == "Hello from CI/CD project!"
+    assert greet("Guntur") == "Hello, Guntur! Welcome to CI/CD."
+    assert greet("World") == "Hello, World! Welcome to CI/CD."
