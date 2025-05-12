@@ -10,11 +10,16 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Dependencies
-        run: echo "No dependencies to install"
+        run: echo "No dependencies"
 
       - name: Compile Code
         run: python -m py_compile main.py
 
+      - name: Install Pytest
+        run: pip install pytest
+
+      - name: Run Tests
+        run: pytest
+
       - name: Run the Program
         run: python main.py
-
