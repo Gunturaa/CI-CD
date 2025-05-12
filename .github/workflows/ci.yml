@@ -1,1 +1,20 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: echo "No dependencies to install"
+
+      - name: Compile Code
+        run: python -m py_compile main.py
+
+      - name: Run the Program
+        run: python main.py
 
