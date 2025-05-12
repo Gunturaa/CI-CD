@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -21,7 +22,7 @@ jobs:
       - name: Compile Code
         run: python -m py_compile main.py
 
-      - name: Run Tests with Pytest
+      - name: Run Unit Tests with Pytest
         run: pytest
 
       - name: Run the Program
